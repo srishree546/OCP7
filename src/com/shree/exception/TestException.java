@@ -9,6 +9,7 @@ public class TestException {
 		System.out.println(z);
 	}
 
+	// method for diving 2 numbers
 	public static int division(int x,int y){
 		int z = 0;
 		try{

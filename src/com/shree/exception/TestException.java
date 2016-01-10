@@ -8,8 +8,11 @@ public class TestException {
 	public static void main(String []args) {
 		int x=0;
 		int y=12;
+		if(x>0) {
 		int z=TestException.division(x,y);
 		System.out.println(z);
+		}
+		
 	}
 
 	// method for diving 2 numbers

@@ -14,11 +14,6 @@ public class TestException {
 
 	// method for diving 2 numbers
 	public static int division(int x,int y){
-		int z = 0;
-		try{
-			z=y/x;
-			}catch(ArithmeticException e)
-			{}
-		return z;			
+			return y/x;			
 	}
 }

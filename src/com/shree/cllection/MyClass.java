@@ -24,11 +24,8 @@ public class MyClass{
 		obj.add(a3);
 		obj.add(a4);
 		obj.add(a5);
+			System.out.println(obj.size());
 		
-		Iterator it=obj.iterator();
-		while(it.hasNext()){
-			System.out.println(it.next());
-		}
 	}
 	@Override
 	public int hashCode() {
@@ -50,4 +47,10 @@ public class MyClass{
 			return false;
 		return true;
 	}
+/*
+	@Override
+	public String toString() {
+		return "MyClass [num=" + num + "]";
+	}
+*/	
 }

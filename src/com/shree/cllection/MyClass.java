@@ -10,6 +10,7 @@ public class MyClass{
 	MyClass(int num){
 	this.num=num;
 	}
+
 	public static void main(String []args) {
 		MyClass a1=new MyClass(1);
 		MyClass a2=new MyClass(11);
@@ -28,5 +29,25 @@ public class MyClass{
 		while(it.hasNext()){
 			System.out.println(it.next());
 		}
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + num;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MyClass other = (MyClass) obj;
+		if (num != other.num)
+			return false;
+		return true;
 	}
 }

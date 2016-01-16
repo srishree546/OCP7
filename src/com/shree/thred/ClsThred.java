@@ -19,7 +19,7 @@ class MyThread extends Thread {
 class MyT extends Thread {
 	public void run() {
 		for(int i=0;i<10;i++) {
-		System.out.println("count :"+i);
+		System.out.println(Thread.currentThread().getName() + " count :"+i);
 		}
 	}
 }
@@ -27,8 +27,11 @@ public class ClsThred {
 	public volatile int volt=0;
 	public int count=0;
 	public static void main(String args[]) {
-		MyT obj=new MyT();
-		obj.start();
+		MyT obj1=new MyT();
+		obj1.start();
+		
+		MyT obj2=new MyT();
+		obj2.start();
 		
 	}
 

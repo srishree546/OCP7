@@ -92,15 +92,7 @@ class ClsMap implements Comparable {
 			compareTo = this.salary - other.salary;
 		}
 		return compareTo;*/
-		int compareTo;
-		if(this.salary > other.salary)
-			compareTo=1;
-		else
-			if(this.salary < other.salary)
-				compareTo=-1;
-			else
-				compareTo=0;
-
+		int compareTo = this.salary - other.salary;
 		if(compareTo == 0) {
 			compareTo = (-1)*name.compareTo(other.name);
 		}

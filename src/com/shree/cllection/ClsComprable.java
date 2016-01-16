@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.Iterator;
 
 public class ClsComprable {
+	
 	public static void main(String []args){
 		ClsMap mp1=new ClsMap("Alex",25000);
 		ClsMap mp2=new ClsMap("Ajay",250000);
@@ -13,6 +14,7 @@ public class ClsComprable {
 		ClsMap mp4=new ClsMap("Jay",250000);
 		ClsMap mp5=new ClsMap("Alex",25000);
 		ClsMap mp6=new ClsMap("Ajay",250000);
+		
 		Map trm=new TreeMap();
 		trm.put(mp1,mp1);
 		trm.put(mp2,mp2);
@@ -35,24 +37,53 @@ public class ClsComprable {
 class ClsMap implements Comparable {
 	String name;
 	int salary;
+	
 	ClsMap(String name, int salary){
 		this.name=name;
 		this.salary=salary;
 	}
+	
+	
 	@Override
-	public int compareTo(Object obj) {
-		// TODO Auto-generated method stub
-		
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + salary;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
 		if (this == obj)
-			return 0;
+			return true;
 		if (obj == null)
-			return 1;
+			return false;
 		if (getClass() != obj.getClass())
-			return 1;
+			return false;
 		ClsMap other = (ClsMap) obj;
-		if (name != other.name && salary != other.salary)
-			return 1;
-		return 0;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (salary != other.salary)
+			return false;
+		return true;
+	}
+
+
+	@Override
+	public int compareTo(Object obj) {	
+		if (this == obj)
+			return 0;		
+		ClsMap other = (ClsMap) obj;
+		int compareTo = name.compareTo(other.name);
+		if(compareTo == 0) {
+			compareTo = this.salary - other.salary;
+		}
+		return compareTo;
 	}
 	
 	@Override

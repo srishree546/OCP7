@@ -87,11 +87,25 @@ class ClsMap implements Comparable {
 		if (this == obj)
 			return 0;		
 		ClsMap other = (ClsMap) obj;
-		int compareTo = (-1)*name.compareTo(other.name);
+		/*int compareTo = (-1)*name.compareTo(other.name);
 		if(compareTo == 0) {
 			compareTo = this.salary - other.salary;
 		}
+		return compareTo;*/
+		int compareTo;
+		if(this.salary > other.salary)
+			compareTo=1;
+		else
+			if(this.salary < other.salary)
+				compareTo=-1;
+			else
+				compareTo=0;
+
+		if(compareTo == 0) {
+			compareTo = (-1)*name.compareTo(other.name);
+		}
 		return compareTo;
+		
 	}
 	
 	@Override

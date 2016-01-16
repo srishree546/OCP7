@@ -8,16 +8,16 @@ import java.util.Iterator;
 public class ClsComprable {
 	
 	public static void main(String []args){
-		ClsMap mp1=new ClsMap("Alex",25000);
-		ClsMap mp2=new ClsMap("Ajay",250000);
-		ClsMap mp3=new ClsMap("Joy",250000);
-		ClsMap mp4=new ClsMap("Jay",250000);
-		ClsMap mp5=new ClsMap("Alex",250000);
-		ClsMap mp6=new ClsMap("Ajay",250000);
-		ClsMap mp7=new ClsMap("Lex",250000);
-		ClsMap mp8=new ClsMap("Alex",2500);
-		ClsMap mp9=new ClsMap("Alex",25000);
-		ClsMap mp10=new ClsMap("Alex",250000);
+		ClsMap mp1=new ClsMap("Alex",10000);
+		ClsMap mp2=new ClsMap("Ajay",20000);
+		ClsMap mp3=new ClsMap("Joy",30000);
+		ClsMap mp4=new ClsMap("Jay",40000);
+		ClsMap mp5=new ClsMap("Alex",50000);
+		ClsMap mp6=new ClsMap("Ajay",60000);
+		ClsMap mp7=new ClsMap("Lex",70000);
+		ClsMap mp8=new ClsMap("Alex",800);
+		ClsMap mp9=new ClsMap("Alex",9000);
+		ClsMap mp10=new ClsMap("Alex",100000);
 		
 		Map trm=new TreeMap();
 		trm.put(mp1,mp1);
@@ -87,7 +87,7 @@ class ClsMap implements Comparable {
 		if (this == obj)
 			return 0;		
 		ClsMap other = (ClsMap) obj;
-		int compareTo = name.compareTo(other.name);
+		int compareTo = (-1)*name.compareTo(other.name);
 		if(compareTo == 0) {
 			compareTo = this.salary - other.salary;
 		}

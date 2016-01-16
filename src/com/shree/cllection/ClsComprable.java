@@ -12,8 +12,12 @@ public class ClsComprable {
 		ClsMap mp2=new ClsMap("Ajay",250000);
 		ClsMap mp3=new ClsMap("Joy",250000);
 		ClsMap mp4=new ClsMap("Jay",250000);
-		ClsMap mp5=new ClsMap("Alex",25000);
+		ClsMap mp5=new ClsMap("Alex",250000);
 		ClsMap mp6=new ClsMap("Ajay",250000);
+		ClsMap mp7=new ClsMap("Lex",250000);
+		ClsMap mp8=new ClsMap("Alex",2500);
+		ClsMap mp9=new ClsMap("Alex",25000);
+		ClsMap mp10=new ClsMap("Alex",250000);
 		
 		Map trm=new TreeMap();
 		trm.put(mp1,mp1);
@@ -22,6 +26,10 @@ public class ClsComprable {
 		trm.put(mp4,mp4);
 		trm.put(mp5,mp5);
 		trm.put(mp6,mp6);
+		trm.put(mp7,mp7);
+		trm.put(mp8,mp8);
+		trm.put(mp9,mp9);
+		trm.put(mp10,mp10);
 
 		System.out.println(trm.size());
 		Set key=trm.keySet();

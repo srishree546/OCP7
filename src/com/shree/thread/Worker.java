@@ -13,14 +13,14 @@ public class Worker {
         worker.doWork();
     }
 
-    public synchronized void increment(String threadName) throws InterruptedException {
+    public void increment(String threadName) throws InterruptedException {
         count++;
     }
 
     public void doWork() {
         Thread thread1 = new Thread(new Runnable() {
             public void run() {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 1000; i++) {
                     try {
                         increment(Thread.currentThread().getName());
                     } catch (InterruptedException ex) {
@@ -32,7 +32,7 @@ public class Worker {
         thread1.start();
         Thread thread2 = new Thread(new Runnable() {
             public void run() {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 1000; i++) {
                     try {
                         increment(Thread.currentThread().getName());
                     } catch (InterruptedException ex) {
